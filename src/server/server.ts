@@ -8,8 +8,7 @@ const server = express();
 
 router.use(compression());
 
-server.use(cors());
-
+server.use(cors({ origin: true, credentials: true }));
 server.options("*", cors());
 
 router.use(bodyParser.json({ limit: "10mb" }));
