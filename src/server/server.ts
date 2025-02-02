@@ -2,9 +2,9 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import compression from "compression";
+import router from "../config/routes.js";
 
 const server = express();
-import router from "../config/routes.js";
 
 router.use(compression());
 
