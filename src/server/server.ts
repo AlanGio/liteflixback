@@ -9,7 +9,7 @@ import router from "../config/routes.js";
 router.use(compression());
 
 router.use(cors());
-router.use(bodyParser.json());
+router.use(bodyParser.json({ limit: "10mb" }));
 router.use(bodyParser.urlencoded({ extended: true }));
 
 server.use("/", router);
