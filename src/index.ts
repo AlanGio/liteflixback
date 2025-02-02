@@ -1,9 +1,11 @@
 import "dotenv/config";
 import { MongoDBSocketClient } from "./db/mongo_db_server_client.js";
 
-const client = await MongoDBSocketClient.getInstance();
+await MongoDBSocketClient.getInstance();
 import server from "./server/server.js";
 
-server.listen(3000, function () {
+const port = process.env.PORT || 5006;
+
+server.listen(port, function () {
   console.log("Server running in Port 3000!");
 });
