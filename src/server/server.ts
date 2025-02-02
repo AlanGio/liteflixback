@@ -8,7 +8,8 @@ import router from "../config/routes.js";
 
 router.use(compression());
 
-router.use(cors());
+server.use(cors());
+
 router.use(bodyParser.json({ limit: "10mb" }));
 router.use(bodyParser.urlencoded({ extended: true }));
 
