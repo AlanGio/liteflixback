@@ -7,6 +7,7 @@ import router from "../config/routes.js";
 const server = express();
 
 server.use(cors());
+server.options("*", cors());
 
 router.use(compression());
 router.use(bodyParser.json({ limit: "10mb" }));
