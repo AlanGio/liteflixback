@@ -10,8 +10,9 @@ server.use(cors());
 server.options("*", cors());
 
 router.use(compression());
-router.use(bodyParser.json({ limit: "10mb" }));
-router.use(bodyParser.urlencoded({ extended: true }));
+
+server.use(bodyParser.json({ limit: "50mb" }));
+server.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 server.use("/", router);
 
