@@ -7,7 +7,9 @@ const server = express();
 server.use(cors());
 server.options("*", cors());
 router.use(compression());
-router.use(bodyParser.json({ limit: "10mb" }));
-router.use(bodyParser.urlencoded({ extended: true }));
+
+router.use(bodyParser.json({ limit: "50mb" }));
+router.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
+
 server.use("/", router);
 export default server;
